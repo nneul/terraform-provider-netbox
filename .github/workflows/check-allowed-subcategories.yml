@@ -1,0 +1,8 @@
+name: check-allowed-subcategories
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check-allowed-subcategories
+        run: bash -c 'while read line; do grep --quiet "$line" docs/allowed-subcategories.txt; if [ "$?" != "0" ]; then echo "error: subcategory \"$line\" is not in docs/allowed-subcategories.txt"; exit 1; fi; done <<< $(grep -hir subcategory docs | sort -u | cut -d'"' -f2)'
