@@ -36,6 +36,7 @@ func resourceCustomField() *schema.Resource {
 					models.CustomFieldTypeValueInteger,
 					models.CustomFieldTypeValueBoolean,
 					models.CustomFieldTypeValueDate,
+					models.CustomFieldTypeValueDateTime,
 					models.CustomFieldTypeValueURL,
 					models.CustomFieldTypeValueSelect,
 					models.CustomFieldTypeValueMultiselect,
